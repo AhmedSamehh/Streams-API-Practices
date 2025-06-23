@@ -27,7 +27,7 @@ class A_DefaultMethodTest {
     map.put(3, new StringBuilder("charlie"));
 
     // TODO write code to modify map
-
+    map.keySet().stream().forEach(k-> map.get(k).append(k));
     Assertions.assertEquals(3, map.size());
     Assertions.assertTrue(map.values().stream().allMatch(x -> x instanceof StringBuilder));
     Assertions.assertEquals("alfa1", map.get(1).toString());
