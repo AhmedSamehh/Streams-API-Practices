@@ -19,7 +19,7 @@ class A_DefaultMethodTest {
   // each StringBuilder value in-place.
   ///
   @Test
-  @Disabled
+//  @Disabled
   public void c04_appendToMapValues() {
     final Map<Integer, StringBuilder> map = new TreeMap<>();
     map.put(1, new StringBuilder("alfa"));
@@ -45,7 +45,7 @@ class A_DefaultMethodTest {
    * string representation of its corresponding Integer key.
    */
   @Test
-  @Disabled
+//  @Disabled
   public void c05_replaceMapValues() {
     Map<Integer, String> map = new TreeMap<>();
     map.put(1, "alfa");
@@ -53,7 +53,7 @@ class A_DefaultMethodTest {
     map.put(3, "charlie");
 
     // TODO write code to modify map
-
+    map.replaceAll((integer, s) -> s+integer);
     Assertions.assertEquals(Map.of(1, "alfa1", 2, "bravo2", 3, "charlie3"), map);
   }
 
