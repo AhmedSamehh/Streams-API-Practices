@@ -6,6 +6,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  * Calculates the sum of digits of a given integer.
  *
@@ -20,11 +25,11 @@ import org.junit.jupiter.api.Test;
 class C_SumOfDigits {
 
   @Test
-  @Disabled
+//  @Disabled
   void testSumOfDigits() {
     final var input = DummyData.fakerNumber();
     var mySolution = NumbersProblemSolution.sumOfDigits(input);
-    var yourSolution = 2;
+    var yourSolution = String.valueOf(input).chars().map(Character::getNumericValue).sum();
 
     Assertions.assertEquals(mySolution, yourSolution);
   }
