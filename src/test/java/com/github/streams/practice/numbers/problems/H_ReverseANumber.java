@@ -10,10 +10,11 @@ class H_ReverseANumber {
 
   @Test
   @Disabled
-  static void reverseANumber() {
+  public void reverseANumber() {
     final var input = DummyData.fakerNumber();
     var mySolution = NumbersProblemSolution.reverseANumber(input);
-    int yourSolution = 0;
+    StringBuilder sb = new StringBuilder(String.valueOf(input));
+    int yourSolution = Integer.parseInt(sb.reverse().toString());
 
     Assertions.assertEquals(mySolution, yourSolution);
   }
